@@ -1,0 +1,24 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.26.x'
+      - name: Check formatting
+        run: test -z "$(gofmt -l .)"
+      - name: Test
+        run: go test ./...
+      - name: Build binaries
+        run: |
+          go build -o bin/streamsketch ./cmd/streamsketch
+          go build -o bin/streamsketch-api ./cmd/api
+      - name: Exercise sample data
+        run: ./bin/streamsketch -input samples/events.csv -format json -out reports/summary.json
