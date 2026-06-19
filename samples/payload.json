@@ -1,0 +1,8 @@
+{
+  "events": [
+    { "timestamp": "2026-06-19T10:00:00Z", "stream": "api", "userId": "user-001", "item": "checkout", "count": 1 },
+    { "timestamp": "2026-06-19T10:00:01Z", "stream": "api", "userId": "user-002", "item": "checkout", "count": 1 },
+    { "timestamp": "2026-06-19T10:00:02Z", "stream": "api", "userId": "user-003", "item": "search", "count": 1 },
+    { "timestamp": "2026-06-19T10:00:03Z", "stream": "api", "userId": "user-004", "item": "checkout", "count": 1 }
+  ]
+}
