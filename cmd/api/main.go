@@ -16,7 +16,7 @@ import (
 func main() {
 	addr := flag.String("addr", ":8080", "HTTP listen address")
 	precision := flag.Int("precision", 12, "HyperLogLog precision from 4 to 18")
-	width := flag.Int("width", 2048, "count-min sketch width")	
+	width := flag.Int("width", 2048, "count-min sketch width")
 	depth := flag.Int("depth", 5, "count-min sketch depth")
 	topK := flag.Int("top-k", 5, "default heavy hitter count")
 	flag.Parse()
